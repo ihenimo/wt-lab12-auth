@@ -1,0 +1,5 @@
+bin/
+obj/
+.vs/
+*.user
+wt-lab7-7postgres-efcore-savostikova/appsettings.Development.json

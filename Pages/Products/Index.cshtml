@@ -1,0 +1,58 @@
+@page
+@model wt_lab8_8razor_postgresql_savostikova.Pages.Products.IndexModel
+
+@{
+    ViewData["Title"] = "Товары";
+}
+
+<div class="py-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h1 class="fw-bold">Меню товаров</h1>
+            <p class="text-muted">Всего товаров: @Model.Products.Count</p>
+        </div>
+        <a asp-page="./Create" class="btn btn-primary">Добавить товар</a>
+    </div>
+
+    <form method="get" class="mb-4">
+        <div class="input-group" style="max-width: 400px;">
+            <input type="text" name="Search" value="@Model.Search" class="form-control" placeholder="Поиск по названию...">
+            <button type="submit" class="btn btn-outline-secondary">Найти</button>
+        </div>
+    </form>
+
+    @if (Model.Products.Count == 0)
+    {
+        <div class="alert alert-info">Товаров пока нет. Добавьте первый товар!</div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var product in Model.Products)
+            {
+                <div class="col-12 col-md-6 col-lg-4">
+                    <div class="card h-100 shadow-sm rounded-4">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">@product.Name</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">@product.Category</h6>
+                            <p class="card-text mb-1"><strong>Цена:</strong> @product.Price ₽</p>
+                            <p class="card-text">
+                                <strong>В наличии:</strong> 
+                                @if (product.IsAvailable) { <span class="badge bg-success">Да</span> }
+                                else { <span class="badge bg-danger">Нет</span> }
+                            </p>
+                            @if (!string.IsNullOrEmpty(product.Description))
+                            {
+                                <p class="card-text text-muted small">@product.Description</p>
+                            }
+                            <div class="mt-auto pt-3 d-flex gap-2">
+                                <a asp-page="./Edit" asp-route-id="@product.Id" class="btn btn-sm btn-outline-primary w-100">Ред.</a>
+                                <a asp-page="./Delete" asp-route-id="@product.Id" class="btn btn-sm btn-outline-danger w-100">Удалить</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+</div>

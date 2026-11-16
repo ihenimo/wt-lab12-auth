@@ -1,0 +1,29 @@
+@page
+@model wt_lab8_8razor_postgresql_savostikova.Pages.Products.CreateModel
+@{ ViewData["Title"] = "Добавить"; }
+
+<h1>Добавить товар</h1>
+<form method="post">
+    <div class="form-group mb-3">
+        <label asp-for="Product.Name">Название</label>
+        <input asp-for="Product.Name" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Product.Category">Категория</label>
+        <input asp-for="Product.Category" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Product.Price">Цена</label>
+        <input asp-for="Product.Price" class="form-control" />
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Product.Description">Описание</label>
+        <textarea asp-for="Product.Description" class="form-control"></textarea>
+    </div>
+    <div class="form-check mb-3">
+        <input class="form-check-input" asp-for="Product.IsAvailable" />
+        <label class="form-check-label" asp-for="Product.IsAvailable">В наличии</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Создать</button>
+    <a asp-page="./Index" class="btn btn-secondary">Назад</a>
+</form>
