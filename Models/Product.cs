@@ -1,4 +1,5 @@
-namespace wt_lab8_8razor_postgresql_savostikova.Models;
+namespace wt_lab12_12auth_validation_savostikova.Models;
+// ... и дальше ваш класс Product
 
 public class Product
 {

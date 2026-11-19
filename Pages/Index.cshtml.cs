@@ -1,4 +1,4 @@
-using wt_lab8_8razor_postgresql_savostikova.Models;
+using wt_lab12_12auth_validation_savostikova.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 

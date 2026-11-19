@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
-using wt_lab8_8razor_postgresql_savostikova.Data;
-using wt_lab8_8razor_postgresql_savostikova.Models;
+using wt_lab12_12auth_validation_savostikova.Data;
+using wt_lab12_12auth_validation_savostikova.Models;
 
 namespace wt_lab8_8razor_postgresql_savostikova.Pages.Products;
 
